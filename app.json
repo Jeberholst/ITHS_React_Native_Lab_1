@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "ITHS_React_Native_Lab_1",
+    "slug": "ITHS_React_Native_Lab_1",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "ITHS_React_Native_Lab_1"
+}
