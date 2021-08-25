@@ -1,18 +1,20 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import {StyleSheet} from "react-native";
 import {ScreenContainer} from "react-native-screens";
 import {ButtonPrevNext} from "./ButtonPrevNext";
 import {fetchNew} from "../api/api";
-
-
+import {QuoteContext} from "../App";
 
 export const ContainerButtons = ({setQuote}) => {
 
    const [isPrevEnabled, setIsPrevEnabled] = useState(false);
-   const [isNextEnabled, setNextEnabled] = useState(false);
+   const [isNextEnabled, setNextEnabled] = useState(true);
+
+    const context = useContext(QuoteContext)
 
    const onNextClick = async () => {
      const data = await fetchNew()
+     Object.assign(data, { prevQuote: context ? context.quote : ''})
      console.log('DATA RETURNED', data)
      setQuote(data)
    }
@@ -20,7 +22,7 @@ export const ContainerButtons = ({setQuote}) => {
    return(
       <ScreenContainer style={styles.container}>
         {/*<ButtonPrevNext {...{title: 'Prev', onPress: () => { alert('Previous') }, accessLabel: 'Next button', enabled: isNextEnabled }}/>*/}
-        <ButtonPrevNext {...{title: 'Next', onPress: () => onNextClick() , accessLabel: 'Next button', enabled: isPrevEnabled}}/>
+        <ButtonPrevNext {...{title: 'Next', onPress: () => onNextClick() , accessLabel: 'Next button', enabled: !isNextEnabled}}/>
       </ScreenContainer>
     )
 

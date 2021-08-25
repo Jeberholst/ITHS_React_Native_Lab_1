@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     marginHorizontal: 16,
+    width: '50%'
   },
   title: {
     textAlign: 'center',

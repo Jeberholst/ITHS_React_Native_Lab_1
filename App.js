@@ -13,7 +13,7 @@ export const QuoteContext = React.createContext({});
 
 export default function App() {
 
-  const [currentQuote, setCurrentQuote] = useState({quote: 'Starta'});
+  const [currentQuote, setCurrentQuote] = useState({quote: 'Starta', prevQuote: currentQuote});
 
   const setQuote = (obj)=> {
     setCurrentQuote(obj)
@@ -32,7 +32,7 @@ export default function App() {
           <QuoteContext.Provider value={currentQuote}>
 
             <QuoteBox/>
-            <ContainerButtons setQuote={setQuote}/>
+            <ContainerButtons setQuote={setQuote} />
 
           </QuoteContext.Provider>
 

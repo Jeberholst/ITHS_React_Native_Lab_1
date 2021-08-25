@@ -6,7 +6,7 @@ export const Header = () => {
 
   return(
      <View style={styles.content}>
-       <Text style={styles.text}>{'HEADER'}</Text>
+       <Text style={styles.text}>{'Kanye Quote'}</Text>
      </View>
   )
 
