@@ -1,17 +1,17 @@
 import React from 'react';
-import {Button, StyleSheet } from "react-native";
+import {Button, StyleSheet, Text, View} from "react-native";
 import {rgbaColor} from "react-native-reanimated/src/reanimated2/Colors";
 
 export const ButtonPrevNext = ({ ...props }) => (
 
-   <Button
-      style={styles.container}
-      onPress={() => props.onPress()}
-      title={props.title}
-      disabled={props.enabled}
-      color={rgbaColor(0,0,0, 0.3)}
-      accessibilityLabel="Button PREVIOUS"
-   />
+        <Button
+           style={styles.container}
+           onPress={() => props.onPress()}
+           title={props.title}
+           disabled={props.enabled}
+           color={rgbaColor(0,0,0, 0.3)}
+           accessibilityLabel="Button PREVIOUS"
+        />
 
 );
 

@@ -1,18 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {ContainerButtons} from "./components/ContainerButtons";
 import {Header} from "./components/header/Header";
+import {QuoteBox} from "./components/quotes/QuoteBox";
+
+
+// export const AppContext = createContext({
+//   CURRENT_QUOTE: "Nothing to see here"
+// });
+export const QuoteContext = React.createContext({});
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Header/>
-      <Content/>
-      <ContainerButtons/>
 
-    </View>
+  const [currentQuote, setCurrentQuote] = useState({quote: 'Starta'});
+
+  const setQuote = (obj)=> {
+    setCurrentQuote(obj)
+  };
+
+  useEffect(() => {
+      console.log(currentQuote)
+  }, [currentQuote])
+
+
+  return (
+
+      <View style={styles.container}>
+          <StatusBar style="auto" />
+          <Header/>
+          <QuoteContext.Provider value={currentQuote}>
+
+            <QuoteBox/>
+            <ContainerButtons setQuote={setQuote}/>
+
+          </QuoteContext.Provider>
+
+        </View>
+
+
   );
 }
 const Content = () => {
