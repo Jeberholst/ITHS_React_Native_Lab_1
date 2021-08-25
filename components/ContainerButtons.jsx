@@ -1,15 +1,21 @@
-import React from 'react';
-import {StyleSheet, Text, View} from "react-native";
+import React, {useState} from 'react';
+import {StyleSheet} from "react-native";
 import {ScreenContainer} from "react-native-screens";
-import {ButtonPrev} from "./ButtonPrev";
-import {ButtonNext} from "./ButtonNext";
+import {ButtonPrevNext} from "./ButtonPrevNext";
 
-export const ContainerButtons = () => (
-   <ScreenContainer style={styles.container}>
-      <ButtonPrev/>
-      <ButtonNext/>
-   </ScreenContainer>
-);
+export const ContainerButtons = () => {
+
+   const [isPrevEnabled, setIsPrevEnabled] = useState(false);
+   const [isNextEnabled, setNextEnabled] = useState(true);
+
+   return(
+      <ScreenContainer style={styles.container}>
+        <ButtonPrevNext {...{title: 'Prev', onPress: () => { alert('Previous') }, accessLabel: 'Next button', enabled: isNextEnabled }}/>
+        <ButtonPrevNext {...{title: 'Next', onPress: () => { alert('Next') }, accessLabel: 'Next button', enabled: isPrevEnabled}}/>
+      </ScreenContainer>
+    )
+
+};
 
 const styles = StyleSheet.create({
   container: {
