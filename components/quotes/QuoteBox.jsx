@@ -19,7 +19,7 @@ export const QuoteBox = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: '50%',
+    height: '50vh',
     width: '100%',
     padding: 15,
     alignItems: 'center',

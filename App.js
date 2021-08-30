@@ -5,6 +5,8 @@ import {ContainerButtons} from "./components/ContainerButtons";
 import {Header} from "./components/header/Header";
 import {QuoteBox} from "./components/quotes/QuoteBox";
 import {KanyeImage} from "./components/images/KanyeImage";
+import {SafeAreaView} from "react-native-web";
+import {ScrollView} from "react-native-gesture-handler";
 
 
 // export const AppContext = createContext({
@@ -27,46 +29,35 @@ export default function App() {
 
   return (
 
-      <View style={styles.container}>
-          <StatusBar style="auto" />
-          <Header/>
-          <KanyeImage/>
-          <QuoteContext.Provider value={currentQuote}>
+     <SafeAreaView style={styles.container}>
+       <ScrollView style={styles.scrollView} vertical={true}>
+         <StatusBar style="auto" />
+         <Header/>
+         <KanyeImage/>
+         <QuoteContext.Provider value={currentQuote}>
 
-            <QuoteBox/>
-            <ContainerButtons setQuote={setQuote} />
+           <QuoteBox/>
+           <ContainerButtons setQuote={setQuote} />
 
-          </QuoteContext.Provider>
+         </QuoteContext.Provider>
 
-        </View>
-
+       </ScrollView>
+     </SafeAreaView>
 
   );
 }
-const Content = () => {
-
-  return(
-     <View style={styles.content}>
-       <Text style={styles.text}>{'EN FIN TEXT HÄR'}</Text>
-     </View>
-  )
-
-}
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    color: 'white',
-    backgroundColor: '#2d2d2d',
-    alignItems: 'center',
+    height: '150vh',
     justifyContent: 'center',
-    width: '100%',
-    height: '100%'
+    paddingTop: StatusBar.currentHeight,
   },
-  content: {
-    height: '25%'
-  }
+  scrollView: {
+    backgroundColor: '#2d2d2d',
+    alwaysBounceVertical: true,
+    paddingVertical: 20,
+  },
 
 });

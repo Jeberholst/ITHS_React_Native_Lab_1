@@ -11,16 +11,14 @@ export const ButtonPrevNext = ({ ...props }) => {
           style={({ pressed }) => [
             {
               backgroundColor: pressed
-                 ? 'rgb(210, 230, 255)'
-                 : 'white'
+                 ? 'rgb(0, 0, 0, 0.7)'
+                 : 'rgba(0, 0, 0, 0.2)'
             },
             styles.wrapperCustom
           ]}>
-
             <Text style={styles.text}>
               {props.title}
             </Text>
-
        </Pressable>
      </View>
   );
@@ -28,17 +26,19 @@ export const ButtonPrevNext = ({ ...props }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
+    width: '15vh',
     justifyContent: "center",
+    textAlign: "center"
   },
   text: {
     fontSize: 16,
     color: 'white'
   },
   wrapperCustom: {
-    borderRadius: 8,
-    padding: 6,
-    backgroundColor: 'rgba(0, 0, 0, 0.2)'
+    borderRadius: 6,
+    padding: 16,
+    // backgroundColor: 'rgba(0, 0, 0, 0.2)'
   },
 });
 
