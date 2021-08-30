@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   },
   card: {
     flexDirection: 'column',
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     height: '100%',
     width: '100%',
     alignItems: 'center',
@@ -40,9 +40,11 @@ const styles = StyleSheet.create({
   textCurrent: {
     marginTop: 25,
     fontSize: 22,
+    color: 'white',
   },
   textPrev: {
     fontSize: 12,
+    color: '#3f3f3f',
   }
 
 });

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import {ContainerButtons} from "./components/ContainerButtons";
 import {Header} from "./components/header/Header";
 import {QuoteBox} from "./components/quotes/QuoteBox";
+import {KanyeImage} from "./components/images/KanyeImage";
 
 
 // export const AppContext = createContext({
@@ -13,7 +14,7 @@ export const QuoteContext = React.createContext({});
 
 export default function App() {
 
-  const [currentQuote, setCurrentQuote] = useState({quote: 'Starta', prevQuote: currentQuote});
+  const [currentQuote, setCurrentQuote] = useState({quote: 'Starta genom att trycka på knappen!', prevQuote: currentQuote});
 
   const setQuote = (obj)=> {
     setCurrentQuote(obj)
@@ -29,6 +30,7 @@ export default function App() {
       <View style={styles.container}>
           <StatusBar style="auto" />
           <Header/>
+          <KanyeImage/>
           <QuoteContext.Provider value={currentQuote}>
 
             <QuoteBox/>

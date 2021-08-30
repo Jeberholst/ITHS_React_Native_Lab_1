@@ -21,8 +21,7 @@ export const ContainerButtons = ({setQuote}) => {
 
    return(
       <ScreenContainer style={styles.container}>
-        {/*<ButtonPrevNext {...{title: 'Prev', onPress: () => { alert('Previous') }, accessLabel: 'Next button', enabled: isNextEnabled }}/>*/}
-        <ButtonPrevNext {...{title: 'Next', onPress: () => onNextClick() , accessLabel: 'Next button', enabled: !isNextEnabled}}/>
+        <ButtonPrevNext {...{title: 'Next Quote', onPress: () => onNextClick() , accessLabel: 'Next button', enabled: !isNextEnabled}}/>
       </ScreenContainer>
     )
 
