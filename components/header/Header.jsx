@@ -1,6 +1,5 @@
 import {StyleSheet, Text, View} from "react-native";
 import React from "react";
-import {rgbaColor} from "react-native-reanimated/src/reanimated2/Colors";
 
 export const Header = () => {
 
@@ -22,5 +21,3 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
 });
-
-

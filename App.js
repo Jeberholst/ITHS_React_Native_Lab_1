@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {createContext, useEffect, useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StatusBar} from 'expo-status-bar';
+import React, {useEffect, useState} from 'react';
+import {StyleSheet} from 'react-native';
 import {ContainerButtons} from "./components/ContainerButtons";
 import {Header} from "./components/header/Header";
 import {QuoteBox} from "./components/quotes/QuoteBox";
 import {KanyeImage} from "./components/images/KanyeImage";
 import {SafeAreaView} from "react-native-web";
 import {ScrollView} from "react-native-gesture-handler";
+import {NavigationContainer} from "@react-navigation/native";
 
 export const QuoteContext = React.createContext({});
 
@@ -19,26 +20,27 @@ export default function App() {
   };
 
   useEffect(() => {
-      console.log(currentQuote)
+    console.log(currentQuote)
   }, [currentQuote])
 
 
   return (
+     <NavigationContainer>
+       <SafeAreaView style={styles.container}>
+         <ScrollView style={styles.scrollView} vertical={true}>
+           <StatusBar style="auto" />
+           <Header/>
+           <KanyeImage/>
+           <QuoteContext.Provider value={currentQuote}>
 
-     <SafeAreaView style={styles.container}>
-       <ScrollView style={styles.scrollView} vertical={true}>
-         <StatusBar style="auto" />
-         <Header/>
-         <KanyeImage/>
-         <QuoteContext.Provider value={currentQuote}>
+             <QuoteBox/>
+             <ContainerButtons setQuote={setQuote} />
 
-           <QuoteBox/>
-           <ContainerButtons setQuote={setQuote} />
+           </QuoteContext.Provider>
 
-         </QuoteContext.Provider>
-
-       </ScrollView>
-     </SafeAreaView>
+         </ScrollView>
+       </SafeAreaView>
+     </NavigationContainer>
 
   );
 }
