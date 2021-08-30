@@ -5,7 +5,7 @@ import {rgbaColor} from "react-native-reanimated/src/reanimated2/Colors";
 export const Header = () => {
 
   return(
-     <View style={styles.content}>
+     <View style={styles.container}>
        <Text style={styles.text}>{'Kanye Quote'}</Text>
      </View>
   )
@@ -13,12 +13,13 @@ export const Header = () => {
 }
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: rgbaColor(0,0,0, 0.3),
+    textAlign: 'center',
   },
   text: {
     fontSize: 30,
+    marginTop: 15,
     color: '#fff',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
   },
 });
 

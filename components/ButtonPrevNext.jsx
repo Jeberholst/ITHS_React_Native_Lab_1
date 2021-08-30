@@ -27,7 +27,8 @@ export const ButtonPrevNext = ({ ...props }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '15vh',
+    minWidth: '50%',
+    maxWidth: '75%',
     justifyContent: "center",
     textAlign: "center"
   },

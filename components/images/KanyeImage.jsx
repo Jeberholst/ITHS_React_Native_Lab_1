@@ -16,7 +16,10 @@ export const KanyeImage = () => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    width: '100%',
     paddingTop: 50,
+    alignItems: 'center'
   },
   image: {
     width: '50vh',

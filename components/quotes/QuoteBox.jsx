@@ -41,10 +41,12 @@ const styles = StyleSheet.create({
     marginTop: 25,
     fontSize: 22,
     color: 'white',
+    fontFamily: 'Roboto'
   },
   textPrev: {
     fontSize: 12,
     color: '#3f3f3f',
+    fontFamily: 'Roboto'
   }
 
 });

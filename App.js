@@ -8,10 +8,6 @@ import {KanyeImage} from "./components/images/KanyeImage";
 import {SafeAreaView} from "react-native-web";
 import {ScrollView} from "react-native-gesture-handler";
 
-
-// export const AppContext = createContext({
-//   CURRENT_QUOTE: "Nothing to see here"
-// });
 export const QuoteContext = React.createContext({});
 
 export default function App() {
