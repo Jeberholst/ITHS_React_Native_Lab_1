@@ -5,23 +5,27 @@ import ButtonPrevNext from "./ButtonPrevNext";
 import {fetchNew} from "../api/api";
 import {QuoteContext} from "../App";
 
-export default function ContainerButtons({setQuote}){
+export default function ContainerButtons({setQuote}) {
 
-  const [isPrevEnabled, setIsPrevEnabled] = useState(false);
   const [isNextEnabled, setNextEnabled] = useState(true);
 
   const context = useContext(QuoteContext)
 
   const onNextClick = async () => {
     const data = await fetchNew()
-    Object.assign(data, { prevQuote: context ? context.quote : ''})
+    Object.assign(data, {prevQuote: context ? context.quote : ''})
     console.log('DATA RETURNED', data)
     setQuote(data)
   }
 
-  return(
+  return (
      <ScreenContainer style={styles.container}>
-       <ButtonPrevNext {...{title: 'Next Quote', onPress: () => onNextClick() , accessLabel: 'Next button', enabled: !isNextEnabled}}/>
+       <ButtonPrevNext {...{
+         title: 'Next Quote',
+         onPress: () => onNextClick(),
+         accessLabel: 'Next button',
+         enabled: !isNextEnabled
+       }}/>
      </ScreenContainer>
   )
 

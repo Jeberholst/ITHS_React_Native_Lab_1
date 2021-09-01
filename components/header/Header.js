@@ -1,9 +1,9 @@
 import {StyleSheet, Text, View} from "react-native";
 import React from "react";
 
-export default function Header(){
+export default function Header() {
 
-  return(
+  return (
      <View style={styles.container}>
        <Text style={styles.text}>{'Kanye Quote'}</Text>
      </View>

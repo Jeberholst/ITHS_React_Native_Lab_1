@@ -13,9 +13,7 @@ export const fetchNew = async () => {
          console.error(error);
        });
   } catch (e) {
-      console.log('Fetch error occured', e)
+    console.log('Fetch error occured', e)
   }
-
-
 
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from "react-native";
 
-function ButtonPrevNext({ ...props }){
+function ButtonPrevNext({...props}) {
 
   return (
      <View style={styles.container}>
        <Pressable
           onPress={() => props.onPress()}
-          style={({ pressed }) => [
+          style={({pressed}) => [
             {
               backgroundColor: pressed
                  ? 'rgb(0, 0, 0, 0.7)'

@@ -11,11 +11,14 @@ import {NavigationContainer} from "@react-navigation/native";
 
 export const QuoteContext = React.createContext({});
 
-export default function App(){
+export default function App() {
 
-  const [currentQuote, setCurrentQuote] = useState({quote: 'Starta genom att trycka på knappen!', prevQuote: currentQuote ? currentQuote : ''});
+  const [currentQuote, setCurrentQuote] = useState({
+    quote: 'Starta genom att trycka på knappen!',
+    prevQuote: currentQuote ? currentQuote : ''
+  });
 
-  const setQuote = (obj)=> {
+  const setQuote = (obj) => {
     setCurrentQuote(obj)
   };
 
@@ -26,23 +29,23 @@ export default function App(){
 
   return (
      <GestureHandlerRootView>
-         <NavigationContainer>
-           <SafeAreaView style={styles.container}>
-             <ScrollView style={styles.scrollView} vertical={true}>
-               <StatusBar style="auto" />
-               <Header/>
-               <KanyeImage/>
-               <QuoteContext.Provider value={currentQuote}>
+       <NavigationContainer>
+         <SafeAreaView style={styles.container}>
+           <ScrollView style={styles.scrollView} vertical={true}>
+             <StatusBar style="auto"/>
+             <Header/>
+             <KanyeImage/>
+             <QuoteContext.Provider value={currentQuote}>
 
-                 <QuoteBox/>
-                 <ContainerButtons setQuote={setQuote} />
+               <QuoteBox/>
+               <ContainerButtons setQuote={setQuote}/>
 
-               </QuoteContext.Provider>
+             </QuoteContext.Provider>
 
-             </ScrollView>
-           </SafeAreaView>
-         </NavigationContainer>
-       </GestureHandlerRootView>
+           </ScrollView>
+         </SafeAreaView>
+       </NavigationContainer>
+     </GestureHandlerRootView>
 
   );
 }

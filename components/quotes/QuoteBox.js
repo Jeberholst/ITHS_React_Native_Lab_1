@@ -2,7 +2,7 @@ import React, {useContext} from "react"
 import {StyleSheet, Text, View} from "react-native";
 import {QuoteContext} from "../../App";
 
-export default function QuoteBox(){
+export default function QuoteBox() {
 
   const context = useContext(QuoteContext)
 
