@@ -1,9 +1,9 @@
-const BASE_API_URL_V1 = "https://api.yomomma.info/"
+const BASE_API_URL_V1 = "https://api.kanye.rest"
 
 export const fetchNew = async () => {
 
   try {
-    return await fetch('https://api.kanye.rest')
+    return await fetch(BASE_API_URL_V1)
        .then(async (response) => await response.json())
        .then((data) => {
          console.log(data)

@@ -50,7 +50,7 @@ export default function App(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: '150vh',
+    height: '100%',
     justifyContent: 'center',
     paddingTop: StatusBar.currentHeight,
   },
