@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from "react-native";
 
-export const ButtonPrevNext = ({ ...props }) => {
+function ButtonPrevNext({ ...props }){
 
   return (
      <View style={styles.container}>
@@ -22,6 +22,8 @@ export const ButtonPrevNext = ({ ...props }) => {
      </View>
   );
 };
+
+export default ButtonPrevNext;
 
 const styles = StyleSheet.create({
   container: {

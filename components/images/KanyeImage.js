@@ -1,9 +1,9 @@
 import React from "react";
-import ImageKanye from '../../assets/images/Kanye-west.webp'
+import ImageKanye from '../../../ITHS_CPU_RN_Lab_1/__tests__/assets/images/Kanye-west.webp'
 import { View, Image, StyleSheet } from 'react-native';
 
 
-export const KanyeImage = () => {
+function KanyeImage(){
   return (
      <View style={styles.container}>
        <Image
@@ -13,6 +13,8 @@ export const KanyeImage = () => {
      </View>
   );
 }
+
+export default KanyeImage
 
 const styles = StyleSheet.create({
   container: {

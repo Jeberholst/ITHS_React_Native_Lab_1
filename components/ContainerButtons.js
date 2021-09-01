@@ -1,11 +1,11 @@
 import React, {useContext, useState} from 'react';
 import {StyleSheet} from "react-native";
 import {ScreenContainer} from "react-native-screens";
-import {ButtonPrevNext} from "./ButtonPrevNext";
+import ButtonPrevNext from "./ButtonPrevNext";
 import {fetchNew} from "../api/api";
 import {QuoteContext} from "../App";
 
-export const ContainerButtons = ({setQuote}) => {
+export default function ContainerButtons({setQuote}){
 
   const [isPrevEnabled, setIsPrevEnabled] = useState(false);
   const [isNextEnabled, setNextEnabled] = useState(true);
@@ -26,6 +26,8 @@ export const ContainerButtons = ({setQuote}) => {
   )
 
 };
+
+;
 
 
 const styles = StyleSheet.create({

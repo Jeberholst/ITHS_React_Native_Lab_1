@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from "react-native";
 import React from "react";
 
-export const Header = () => {
+export default function Header(){
 
   return(
      <View style={styles.container}>
@@ -10,6 +10,7 @@ export const Header = () => {
   )
 
 }
+
 const styles = StyleSheet.create({
   container: {
     textAlign: 'center',
